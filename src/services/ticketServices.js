@@ -2,7 +2,7 @@
 class TicketServices {
     async bookTicket(trainNumber, passengerData, travelDate) {
         try {
-            const response = await fetch("http://localhost:3000/api/v1/ticket/bookticket", {
+            const response = await fetch("https://train-ticket-booking-system-backend.onrender.com/api/v1/ticket/bookticket", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -31,7 +31,7 @@ class TicketServices {
     async getTicket(id) {
         try {
 
-            const response = await fetch(`http://localhost:3000/api/v1/ticket/getticket?id=${id}`, {
+            const response = await fetch(`https://train-ticket-booking-system-backend.onrender.com/api/v1/ticket/getticket?id=${id}`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -56,7 +56,7 @@ class TicketServices {
 
     async getTickets() {
         try {
-            const response = await fetch("http://localhost:3000/api/v1/ticket/gettickets", {
+            const response = await fetch("https://train-ticket-booking-system-backend.onrender.com/api/v1/ticket/gettickets", {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
