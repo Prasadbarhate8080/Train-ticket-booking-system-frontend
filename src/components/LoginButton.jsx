@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { LogInIcon } from "lucide-react";
 import LoginMoadal from "./LoginSignupModal.jsx"
 
 function LoginCompo() {
@@ -9,8 +10,9 @@ function LoginCompo() {
       {/* Login Button */}
       <button
         onClick={() => setIsModalOpen(true)}
-        className="cursor-pointer bg-gray-100 px-3 rounded-3xl py-2 hover:bg-gray-200"
+        className="flex items-center gap-2 bg-gray-100 px-3 py-2 rounded-full hover:bg-gray-200"
       >
+        <LogInIcon height={17} />
         Login
       </button>
 

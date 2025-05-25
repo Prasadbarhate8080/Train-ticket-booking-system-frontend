@@ -105,7 +105,7 @@
                   }
                 </Link>
               </li>
-              <li>
+              <li onClick={() => {onClose()}}>
                 <Link
                   to="/bookings"
                   className="block text-lg font-medium text-gray-700 hover:text-orange-500 transition-colors"
@@ -113,7 +113,7 @@
                   📄 My Bookings
                 </Link>
               </li>
-              <li>
+              <li onClick={() => {onClose()}}>
                 <Link
                   to="/"
                   className="block text-lg font-medium text-gray-700 hover:text-orange-500 transition-colors"

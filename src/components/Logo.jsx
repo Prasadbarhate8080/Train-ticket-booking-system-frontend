@@ -20,7 +20,7 @@ function Logo({ width = "150px" }) {
         <path d="M7 12h10"></path>
       </svg>
 
-      <div className="text-3xl text-[#e63900]  font-extrabold tracking-wide italic">
+      <div className="md:text-3xl text-2xl text-[#e63900]  md:font-extrabold tracking-wide italic">
         <span className="font-[500] ">easy</span>
         <span className="font-bold text-red-700">Train</span>
       </div>

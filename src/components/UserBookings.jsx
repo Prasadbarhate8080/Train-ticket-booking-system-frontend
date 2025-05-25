@@ -19,18 +19,23 @@ function UserBookings() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [error, setErrors] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const tickets = useSelector((state) => state.bookedTickets.tickets);
-
+  
   useEffect(() => {
     const bookings = async () => {
       try {
+        setLoading(true)
         let response = await ticketService.getTickets();
         dispatch(setBookedTickets(response.data));
-        setLoading(false);
+        
       } catch (error) {
         setErrors(error.message);
+      }
+      finally
+      {
+        setLoading(false)
       }
     };
     bookings();
@@ -44,12 +49,11 @@ function UserBookings() {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
   };
-
   return (
     <div className="min-h-screen bg-gray-50 p-8">
       <TicketCount />
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold text-gray-800 text-center mb-12">
+        <h1 className="md:text-4xl text-2xl mt-4 font-bold text-gray-800 text-center mb-12">
           <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
             Your Travel History
           </span>
@@ -61,11 +65,10 @@ function UserBookings() {
         )}
         {error && (
           <div className="bg-red-50 p-4 rounded-xl text-center max-w-md mx-auto border border-red-100">
-            <p className="text-red-600 font-medium">⚠️ {error}</p>
+            <p className="text-red-600 font-medium">⚠️ {error }</p>
           </div>
         )}
-        {tickets.length === 0 ? ( 
-        
+        {!error && tickets.length === 0 ? ( 
           <div className="bg-red-50 p-4 rounded-xl text-center max-w-md mx-auto border border-red-100">
             <p className="text-red-600 font-medium">⚠️ No Tickets Booked Yet</p>
           </div>

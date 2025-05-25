@@ -4,7 +4,7 @@ class AuthServices {
     async createAccount({email,name,password}) {
         // console.log(name,email,password);
         try {
-            const userAccount = await fetch("https://train-ticket-booking-system-backend.onrender.com/api/v1/user/register",{
+            const userAccount = await fetch("http://localhost:3000/api/v1/user/register",{
                     method: "POST",
                     headers: {"content-type": "application/json"},
                     body: JSON.stringify({email,name,password})
@@ -35,7 +35,7 @@ class AuthServices {
         // console.log(email,password);
         
         try {
-            const response = await fetch("https://train-ticket-booking-system-backend.onrender.com/api/v1/user/login",{
+            const response = await fetch("http://localhost:3000/api/v1/user/login",{
                 method: "POST",
                 headers: {"content-type": "application/json"},
                 credentials: "include",
@@ -58,7 +58,7 @@ class AuthServices {
 
     async logout() {
         try {
-            const response = await fetch("https://train-ticket-booking-system-backend.onrender.com/api/v1/user/logout",{
+            const response = await fetch("http://localhost:3000/api/v1/user/logout",{
                 method: "POST",
                 headers: {"content-type": "application/json"},
                 credentials: "include",
@@ -86,7 +86,7 @@ class AuthServices {
     async getCurrentUser() {
 
         try {
-            const response = await fetch("https://train-ticket-booking-system-backend.onrender.com/api/v1/user/current-user",{
+            const response = await fetch("http://localhost:3000/api/v1/user/current-user",{
                 method: "GET",
                 headers: {"content-type": "application/json"},
                 credentials: "include"
@@ -105,7 +105,7 @@ class AuthServices {
         }
     }
 
-}
+}   
 
 const authService = new AuthServices();
 

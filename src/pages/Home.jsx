@@ -27,9 +27,9 @@ function Home() {
           </Container>
         </div>
       </div>
-      <div className="bg-[#f2f2f8] h-[160px] mt-24 py-6 ">
+      <div className="bg-[#f2f2f8] mt-[144px] min-h-[160px] md:mt-24 py-6 ">
         <Container>
-          <div className="flex gap-4">
+          <div className="flex gap-4 justify-center flex-wrap">
             <div className="w-[295px] h-[112px] flex justify-center items-center rounded-2xl bg-white shadow-[0_1px_12px_rgba(29,29,29,0.102)]">
               <div>
                 <img
@@ -83,8 +83,8 @@ function Home() {
       </div>
       <div className="mt-15">
         <Container>
-          <h1 className="font-bold text-2xl">Why Book With easyTrain</h1>
-          <div className="h-[134px] mt-10 flex gap-4 ">
+          <h1 className="font-bold indent-3 text-2xl">Why Book With easyTrain</h1>
+          <div className="min-h-[134px] mt-10 flex gap-4 justify-center flex-wrap">
             <div className="w-[323px] h-full p-4 flex gap-2 rounded-xl shadow-[0_1px_12px_rgba(29,29,29,0.102)]">
               <div className="w-[189px]">
                 <h1 className="text-orange-600 font-bold text-md">

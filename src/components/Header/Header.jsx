@@ -22,20 +22,20 @@ function Header() {
           </Link>
 
           {/* Navigation Links */}
-          <ul className="flex gap-10 text-gray-600 text-sm font-medium items-center">
-            <li>
+          <ul className="flex gap-10  text-gray-600 text-sm font-medium items-center">
+            <li className="hidden md:block">
               <button
                 onClick={() => navigate("/")}
-                className="flex items-center gap-2 bg-gray-100 px-3 py-2 rounded-full hover:bg-gray-200 transition"
+                className="flex items-center gap-2 bg-gray-100 px-3 py-2 rounded-full hover:bg-gray-200  "
               >
                 <FiHome size={18} />
                 Home
               </button>
             </li>
-            <li>
+            <li className="hidden md:block">
               <button
                 onClick={() => navigate("/bookings")}
-                className="flex items-center gap-2 bg-gray-100 px-3 py-2 rounded-full hover:bg-gray-200 transition"
+                className="flex items-center gap-2 bg-gray-100 px-3 py-2 rounded-full hover:bg-gray-200    "
               >
                 <MdOutlineConfirmationNumber size={18} />
                 Bookings
@@ -46,7 +46,7 @@ function Header() {
               <li>
                 <button
                   onClick={() =>   setSidebarOpen(true)}
-                  className="flex items-center gap-2 bg-gray-100 px-3 py-2 rounded-full hover:bg-gray-200 transition"
+                  className="flex items-center gap-2 bg-gray-100 px-3 py-2 rounded-full hover:bg-gray-200  "
                 >
                   <FiUser size={18} />
                   Account
