@@ -5,7 +5,7 @@
 
             try {
 
-                const response = await fetch(`http://localhost:3000/api/v1/train/gettrains?source=${source}&destination=${destination}`, {
+                const response = await fetch(`https://train-ticket-booking-system-backend.onrender.com/api/v1/train/gettrains?source=${source}&destination=${destination}`, {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
@@ -32,7 +32,7 @@
 
         try {
             
-            const response = await fetch("http://localhost:3000/api/v1/train/addtrain", {
+            const response = await fetch("https://train-ticket-booking-system-backend.onrender.com/api/v1/train/addtrain", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
