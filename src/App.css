@@ -1,0 +1,8 @@
+.pdf-safe,
+.pdf-safe * {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border-color: #d1d5db !important;
+  box-shadow: none !important;
+  background-image: none !important;
+}

@@ -12,6 +12,7 @@ import BookTicket from './pages/BookTicket.jsx'
 import DisplayTicket from './pages/DisplayTicket.jsx'
 import Bookings from './pages/Bookings.jsx'
 import AdminPage from './pages/AdminPage.jsx'
+import AdminDashboard from './pages/AdminDashboard.jsx'
 
 const router = createBrowserRouter([
   {
@@ -35,13 +36,17 @@ const router = createBrowserRouter([
         element: <DisplayTicket />
       },
       {
-        path: "/bookings",  
+        path: "/bookings",
         element: <Bookings/>
       },
       {
-        path: "/admin",  
+        path: "/admin",
         element: <AdminPage/>
       },
+      {
+        path: "/dashboard",
+        element: <AdminDashboard/>
+      }
     ]
   }
 ])

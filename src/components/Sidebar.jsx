@@ -97,10 +97,9 @@
                 >
                   Hello{" "}
                   { authStatus &&
-                  <span className="font-bold text-2xl hover:text-orange-500">
+                  <span className="font-bold text-2xl">
               
                     {capitalizeFirstLetter(userName)}<span>,</span>
-                    
                   </span> 
                   }
                 </Link>

@@ -50,7 +50,7 @@ function LoginModal({ isOpen, onClose }) {
 
   return (
     isOpen && (
-      <div className="fixed inset-0 z-50 bg-[rgba(87,82,82,0.4)] flex items-center justify-center p-4">
+      <div className="fixed inset-0 z-50 bg-[rgba(87,82,82,0.4)]  flex items-center justify-center p-4">
         <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md relative overflow-hidden border-2 border-orange-100">
           {/* Header */}
           <div className="bg-gradient-to-r from-orange-500 to-amber-600 p-6">

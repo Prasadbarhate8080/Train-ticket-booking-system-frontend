@@ -1,8 +1,9 @@
+import { config } from "./config";
 
 class TicketServices {
     async bookTicket(trainNumber, passengerData, travelDate) {
         try {
-            const response = await fetch("https://train-ticket-booking-system-backend.onrender.com/api/v1/ticket/bookticket", {
+            const response = await fetch(`${config.API_BASE_URL}/api/v1/ticket/bookticket`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -15,15 +16,15 @@ class TicketServices {
 
                 })
             });
-    
+            
             if (!response.ok) {
                 throw new Error(`Ticket booking failed: ${response.statusText}`);
             }
     
             return await response.json();
-    
+      
         } catch (error) {
-            console.log("ticketService :: bookTicket :: error", error);
+            console.log("tick   etService :: bookTicket :: error", error);
             throw error;
         }
     }
@@ -31,7 +32,7 @@ class TicketServices {
     async getTicket(id) {
         try {
 
-            const response = await fetch(`https://train-ticket-booking-system-backend.onrender.com/api/v1/ticket/getticket?id=${id}`, {
+            const response = await fetch(`${config.API_BASE_URL}/api/v1/ticket/getticket?id=${id}`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -56,13 +57,15 @@ class TicketServices {
 
     async getTickets() {
         try {
-            const response = await fetch("https://train-ticket-booking-system-backend.onrender.com/api/v1/ticket/gettickets", {
+            const response = await fetch(`${config.API_BASE_URL}/api/v1/ticket/gettickets`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
                 },
                 credentials: "include", 
             });
+            console.log(response);
+            
             if (!response.ok) {
                 throw new Error(`Fetching tickets failed: ${response.statusText}`);
             }
