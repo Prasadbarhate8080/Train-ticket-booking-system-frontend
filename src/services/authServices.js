@@ -15,7 +15,6 @@ class AuthServices {
             if (!userAccount.ok) {
                 throw new Error(`Signup failed: ${userAccount.statusText}`);
             }
-            
             const userInfo = await userAccount.json();
 
             if(userInfo)

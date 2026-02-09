@@ -1,8 +1,8 @@
-import { StrictMode } from 'react'
+import { StrictMode, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
-import { Provider } from 'react-redux'
+import { Provider, useSelector } from 'react-redux'
 import { store } from './store/store.js'
 import { RouterProvider,createBrowserRouter} from 'react-router-dom'
 import {AuthLayout} from './components/index.js'
@@ -16,40 +16,48 @@ import AdminDashboard from './pages/AdminDashboard.jsx'
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <App/>,
+    path: '/',
+    element: <App />,
     children: [
       {
-        path: "/",
-        element: <Home />
+        path: '/',
+        element: <Home />,
       },
       {
-        path: "/searched-trains",
-        element: <Trains/>
+        path: '/searched-trains',
+        element: <Trains />,
       },
       {
-        path: "/book-ticket",
-        element: <BookTicket />
+        path: '/book-ticket',
+        element: <BookTicket />,
       },
       {
-        path: "/display-ticket/:id",  
-        element: <DisplayTicket />
+        path: '/display-ticket/:id',
+        element: <DisplayTicket />,
       },
       {
-        path: "/bookings",
-        element: <Bookings/>
+        path: '/bookings',
+        element: <Bookings />,
       },
       {
-        path: "/admin",
-        element: <AdminPage/>
+        path: '/admin',
+        element: (
+          <AuthLayout authentication allowedRoles={['admin']}>
+            <AdminPage />
+          </AuthLayout>
+        ),
       },
       {
-        path: "/dashboard",
-        element: <AdminDashboard/>
-      }
-    ]
-  }
-])
+        path: '/dashboard',
+        element: (
+          <AuthLayout authentication allowedRoles={['admin']}>
+            <AdminDashboard />
+          </AuthLayout>
+        ),
+      },
+    ],
+  },
+]);
 
 createRoot(document.getElementById('root')).render(
 

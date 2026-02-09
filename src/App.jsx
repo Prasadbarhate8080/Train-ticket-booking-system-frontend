@@ -8,7 +8,7 @@ import Loader from "./components/Loader.jsx";
 import { useSelector } from "react-redux";
 
 function App() {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
 
   useEffect(() => {
