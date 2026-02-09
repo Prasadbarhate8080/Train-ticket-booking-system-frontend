@@ -91,7 +91,7 @@ function Dashboard() {
       {/* Sidebar */}
       <motion.aside
         initial={false}
-        animate={{ width: sidebarOpen ? 260 : 80 }}
+        animate={{ width: sidebarOpen ? 260 : 65 }}
         transition={{ type: 'spring', stiffness: 300, damping: 30 }}
         className="bg-white border-r border-gray-200 flex flex-col overflow-hidden"
       >
